@@ -10,11 +10,12 @@ use App\Monitor;
 use App\Teclado;
 use App\Mouse;
 use App\Parlante;
+use URL;
 use Webpatser\Uuid\Uuid;
 
 class PedidoController extends Controller
 {
-	public function index(){
+  public function index(){
         if (Auth::guest())
           return redirect('home');
         else
@@ -32,7 +33,7 @@ class PedidoController extends Controller
           $teclado = Teclado::where('id',$pedido->teclado_id)->get()->first()->marca;
           $mouse = Teclado::where('id',$pedido->mouse_id)->get()->first()->marca;
           $parlante = Teclado::where('id',$pedido->parlante_id)->get()->first()->marca;
-          $url = 'localhost/token/' . $pedido->token;
+          $url = URL::to('/token') . '/' . $pedido->token;
           $p = compact(['id','monitor','teclado','mouse','parlante','url']);
           $resultado[$index] = $p;
           ++$index;
@@ -43,7 +44,7 @@ class PedidoController extends Controller
       return redirect("home");
    }
 
-	public function store(Request $r){
+  public function store(Request $r){
 
     if (!Auth::guest()){
       $p = new Pedido;
@@ -55,11 +56,11 @@ class PedidoController extends Controller
       $p->token = Uuid::generate();
       $p->save();
 
-      $ruta = 'localhost/token/' . $p->token;
+      $ruta = URL::to('/token') . '/' . $p->token;
 
       return Response::json([ 'mensaje' => 'El pedido se guardo correctamente',
                               'enlace' => $ruta]);
-	}
+  }
   else
     return redirect("home");
 }
@@ -95,10 +96,10 @@ class PedidoController extends Controller
       $mouse = Mouse::where('id',$pedido->mouse_id)->get()->first()->imagen;
       $parlante = Parlante::where('id',$pedido->parlante_id)->get()->first()->imagen;
       $p = new Pedido;
-      $p->urlMonitor = asset($monitor);
-      $p->urlTeclado = asset($teclado);
-      $p->urlMouse = asset($mouse);
-      $p->urlParlante = asset($parlante);
+      $p->urlMonitor = URl::to('') . '/' . $monitor;
+      $p->urlTeclado = URl::to('') . '/' . $teclado;
+      $p->urlMouse = URl::to('') . '/' . $mouse;
+      $p->urlParlante = URl::to('') . '/' . $parlante;
 
       return view ('componentes.panelCompartido')->with("p",$p);
     }
