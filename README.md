@@ -1,1 +1,1 @@
-El proyecto esta limitado a que los pedidos tenga los 4 componentes elegidos. 
+El proyecto esta limitado a que cada pedido tenga los 4 componentes elegidos. 
