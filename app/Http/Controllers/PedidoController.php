@@ -62,8 +62,12 @@ class PedidoController extends Controller
                               'enlace' => $ruta]);
   }
   else
-    return redirect("home");
-}
+    return redirect('home');
+  }
+
+  public function store1(){
+    return redirect('home');
+  }
 
   public function pedidoId($id){
 

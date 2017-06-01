@@ -22,7 +22,8 @@ class ParlanteController extends Controller
          Parlante::destroy($id);
          $elimino = true;
          return Response::json([ 'mensaje' => 'Parlante ha sido eliminado',
-          'elimino' => $elimino]]);
+          'elimino' => $elimino]);
       }
     }
+
 }

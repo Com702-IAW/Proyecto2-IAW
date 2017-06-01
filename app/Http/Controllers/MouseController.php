@@ -17,12 +17,12 @@ class MouseController extends Controller
       if ($pedidos){
         return Response::json([ 'mensaje' => 'Mouse no puede ser eliminado, 
           esta siendo utilizado en pedidos de usuarios',
-          'elimino' => $elimino]]);
+          'elimino' => $elimino]);
       }
       else{
          Mouse::destroy($id);
-        $elimino = true;
-         return Response::json([ 'mensaje' => 'Mouse ha sido eliminado'],
+          $elimino = true;
+          return Response::json([ 'mensaje' => 'Mouse ha sido eliminado',
           'elimino' => $elimino]);
       }
     }

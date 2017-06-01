@@ -19,7 +19,7 @@
 
                     <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
                         <li ><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="#section-about" id = "resetear" >Resetear Pedido </a></li>
+                        <li><a href="#section-about" id = "resetear" >Reset Pedido </a></li>
                          @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>

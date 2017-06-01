@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Parlante;
+
 
 class ParlantesSeeder extends Seeder
 {
@@ -24,18 +26,6 @@ class ParlantesSeeder extends Seeder
             'precio' => 300,
             'color' => 'Blanco y Verde',
             'imagen' => 'src/parlantes1.png'
-          ],
-          [
-            'marca' => 'Genius',
-            'precio' => 700,
-            'color' => 'Bamboo',
-            'imagen' => 'src/parlantes2.png'
-          ],
-          [
-            'marca' => 'Genius',
-            'precio' => 400,
-            'color' => 'Negro y Rojo',
-            'imagen' => 'src/parlantes3.png'
           ]
         ]);
     }

@@ -25,5 +25,5 @@ class MonitorController extends Controller
          return Response::json([ 'mensaje' => 'Monitor ha sido eliminado',
                                 'elimino' => $elimino]);
       }
-    }
+    } 
 }

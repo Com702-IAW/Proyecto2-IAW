@@ -33,6 +33,8 @@ Route::any('panelAdmin/store', 'ComponenteController@store');
 
 Route::post('/producto/store', 'PedidoController@store')->name('guardarPedido');
 
+Route::get('/producto/store', 'PedidoController@store1');
+
 Route::any('/panelPedidos', 'PedidoController@index')->name('panelPedidos');
 
 Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('github');
@@ -54,7 +56,6 @@ Route::post('/componentes/teclado/delete', 'TecladoController@delete');
 Route::post('/componentes/mouse/delete', 'MouseController@delete');
 
 Route::post('/componentes/parlante/delete', 'ParlanteController@delete');
-
 
 Route::get('/auth/facebook', 'FacebookController@redirectToProvider')->name('facebook.login');
 

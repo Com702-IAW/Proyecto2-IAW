@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Teclado;
+
 
 class TecladosSeeder extends Seeder
 {
@@ -25,18 +27,6 @@ class TecladosSeeder extends Seeder
             'precio' => 400,
             'color' => 'Blanco',
             'imagen' => 'src/teclado1.png'
-          ],
-          [
-            'marca' => 'Spider',
-            'precio' => 1000,
-            'color' => 'Negro y Verde',
-            'imagen' => 'src/teclado2.png'
-          ],
-          [
-            'marca' => 'Active',
-            'precio' => 1200,
-            'color' => 'Negro y Azul',
-            'imagen' => 'src/teclado3.png'
           ]
         ]);
     }

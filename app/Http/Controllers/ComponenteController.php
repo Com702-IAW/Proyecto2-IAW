@@ -32,6 +32,8 @@ class ComponenteController extends Controller
 
    public function store(Request $request){
 
+      if (!Auth::guest() and (Auth::user()->isAdmin() ) ){
+
        if($request->isMethod('post')){
 
         $tipo = "";
@@ -72,9 +74,10 @@ class ComponenteController extends Controller
       $file->move(
         base_path() . '/public/src/', $nombre
       );
-
        return redirect('home');
       } 
-  
+    else
+      return redirect('home');
     
+}
 }

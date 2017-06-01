@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Mouse;
+
 
 class MousesSeeder extends Seeder
 {
@@ -25,18 +27,6 @@ class MousesSeeder extends Seeder
             'precio' => 300,
             'color' => 'Gris',
             'imagen' => 'src/mouse1.png'
-          ],
-          [
-            'marca' => 'Spider',
-            'precio' => 700,
-            'color' => 'Metalico',
-            'imagen' => 'src/mouse2.png'
-          ],
-          [
-            'marca' => 'C+',
-            'precio' => 400,
-            'color' => 'Negro',
-            'imagen' => 'src/mouse3.png'
           ]
         ]);
     }
